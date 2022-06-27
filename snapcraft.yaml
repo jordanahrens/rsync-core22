@@ -1,0 +1,46 @@
+name: rsync-core22
+version: 3.2.4
+summary: Copying and synchronizing files and directories in Linux/Unix systems.  
+description: |
+  Rsync (Remote Sync) is an open source utility that provides fast incremental
+  file transfer. It also has useful features for backup and restore operations
+  among many other use cases.
+license: GPL-3.0
+
+grade: stable
+confinement: strict
+base: core22
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: ppc64el
+  - build-on: s390x
+
+apps:
+    rsync:
+        command: usr/local/bin/rsync
+        plugs: [network, home, removable-media]
+
+parts:
+    rsync:
+        plugin: autotools
+        source: https://download.samba.org/pub/rsync/src/rsync-3.2.4.tar.gz
+        source-type: tar
+        source-checksum: sha256/6f761838d08052b0b6579cf7f6737d93e47f01f4da04c5d24d3447b7f2a5fad1
+        build-packages:
+          - gcc
+          - g++
+          - gawk
+          - autoconf
+          - automake
+          - python3-cmarkgfm
+          - acl
+          - libacl1-dev
+          - attr
+          - libattr1-dev
+          - libxxhash-dev
+          - libzstd-dev
+          - liblz4-dev
+          - libssl-dev
