@@ -5,7 +5,7 @@ description: |
   Rsync (Remote Sync) is an open source utility that provides fast incremental
   file transfer. It also has useful features for backup and restore operations
   among many other use cases.
-license: GPL-3.0
+license: GPL-3.0+
 
 grade: stable
 confinement: strict
