@@ -5,6 +5,25 @@ description: |
   Rsync (Remote Sync) is an open source utility that provides fast incremental
   file transfer. It also has useful features for backup and restore operations
   among many other use cases.
+
+  Once installed, create an alias so rsync can function properly when receiving
+  files from other machines:
+
+  `sudo snap alias rsync-core22.rsync rsync`
+
+  Also this snap can _optionally_ be connected to extra plugs so it can interact
+  with files outside its sandbox:
+
+  `sudo snap connect rsync-core22:home`
+  `sudo snap connect rsync-core22:removable-media`
+
+  This snap is maintained by the community, and is not endorsed or officially 
+  maintained by the upstream developers.
+
+  Upstream Project: https://rsync.samba.org/
+
+  snapcraft.yaml Build Definition:
+  https://github.com/jordanahrens/rsync-core22/blob/main/snapcraft.yaml
 license: GPL-3.0+
 
 grade: stable
