@@ -11,8 +11,8 @@ description: |
 
   `sudo snap alias rsync-core22.rsync rsync`
 
-  Also this snap can _optionally_ be connected to extra plugs so it can interact
-  with files outside its sandbox:
+  Also this snap can _optionally_ be connected to extra plugs so it can access
+  files outside its sandbox:
 
   `sudo snap connect rsync-core22:home`
   `sudo snap connect rsync-core22:removable-media`
