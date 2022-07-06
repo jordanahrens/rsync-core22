@@ -1,23 +1,27 @@
 name: rsync-core22
 version: 3.2.4
-summary: Copying and synchronizing files and directories in Linux/Unix systems.  
+summary: Utility for transferring and synchronizing files between computers and drives  
 description: |
-  Rsync (Remote Sync) is an open source utility that provides fast incremental
-  file transfer. It also has useful features for backup and restore operations
-  among many other use cases.
+  Rsync is a utility for efficiently transferring and synchronizing files
+  between a computer and a storage drive and across networked computers by
+  comparing the modification times and sizes of files.
 
-  Once installed, create an alias so rsync can function properly when receiving
-  files from other machines:
+  **This snap is intended primarily for use with Ubuntu Core.  Unless you have
+  a compelling reason otherwise, you should install rsync from your distro's
+  repo.**
+
+  Once installed, you'll want to create an alias so rsync can function properly
+  when receiving files from other machines:
 
   `sudo snap alias rsync-core22.rsync rsync`
 
-  Also this snap can _optionally_ be connected to extra plugs so it can access
-  files outside its sandbox:
+  And then you'll probably want to enable the _optional_ extra plugs to access
+  files outside the snap's sandbox:
 
   `sudo snap connect rsync-core22:home`
   `sudo snap connect rsync-core22:removable-media`
 
-  This snap is maintained by the community, and is not endorsed or officially 
+  This snap is maintained by the community, and is not endorsed or officially
   maintained by the upstream developers.
 
   Upstream Project: https://rsync.samba.org/
