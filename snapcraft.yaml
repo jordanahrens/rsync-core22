@@ -1,6 +1,6 @@
 name: rsync-core22
 version: 3.2.4
-summary: Utility for transferring and synchronizing files between computers and drives
+summary: Utility for transferring and syncing files between computers and drives
 description: |
   Rsync is a utility for efficiently transferring and synchronizing files
   between a computer and a storage drive and across networked computers by
