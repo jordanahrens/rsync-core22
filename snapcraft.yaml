@@ -20,6 +20,9 @@ description: |
 
   `sudo snap connect rsync-core22:home`
   `sudo snap connect rsync-core22:removable-media`
+  `sudo snap connect rsync-core22:ssh-keys`
+  # Read/Write access to $HOME/.ssh/known_hosts file
+  `sudo snap connect rsync-core22:dot-ssh-knownhosts`
 
   This snap is maintained by the community, and is not endorsed or officially
   maintained by the upstream developers.
@@ -41,10 +44,16 @@ architectures:
   - build-on: ppc64el
   - build-on: s390x
 
+plugs:
+  dot-ssh-knownhosts:
+    interface: personal-files
+    write:
+    - $HOME/.ssh/known_hosts
+
 apps:
     rsync:
         command: usr/local/bin/rsync
-        plugs: [network, home, removable-media]
+        plugs: [network, home, removable-media, ssh-keys, dot-ssh-knownhosts]
 
 parts:
     rsync:
