@@ -22,7 +22,7 @@ architectures:
 apps:
     rsync:
         command: usr/local/bin/rsync
-        plugs: [network, home, removable-media]
+        plugs: [network, home, removable-media, ssh-keys]
 
 parts:
     rsync:
