@@ -6,31 +6,6 @@ description: |
   between a computer and a storage drive and across networked computers by
   comparing the modification times and sizes of files.
 
-  **This snap is intended primarily for use with Ubuntu Core.  Unless you have
-  a compelling reason otherwise, you should install rsync from your distro's
-  repo.**
-
-  Once installed, you'll want to create an alias so rsync can function properly
-  when receiving files from other machines:
-
-  `sudo snap alias rsync-core22.rsync rsync`
-
-  And then you'll probably want to enable the _optional_ extra plugs to access
-  files outside the snap's sandbox:
-
-  `sudo snap connect rsync-core22:home`
-  `sudo snap connect rsync-core22:removable-media`
-  `sudo snap connect rsync-core22:ssh-keys`
-  # Read/Write access to $HOME/.ssh/known_hosts file
-  `sudo snap connect rsync-core22:dot-ssh-knownhosts`
-
-  This snap is maintained by the community, and is not endorsed or officially
-  maintained by the upstream developers.
-
-  Upstream Project: https://rsync.samba.org/
-
-  snapcraft.yaml Build Definition:
-  https://github.com/jordanahrens/rsync-core22/blob/main/snapcraft.yaml
 license: GPL-3.0+
 
 grade: stable
@@ -44,16 +19,10 @@ architectures:
   - build-on: ppc64el
   - build-on: s390x
 
-plugs:
-  dot-ssh-knownhosts:
-    interface: personal-files
-    write:
-    - $HOME/.ssh/known_hosts
-
 apps:
     rsync:
         command: usr/local/bin/rsync
-        plugs: [network, home, removable-media, ssh-keys, dot-ssh-knownhosts]
+        plugs: [network, home, removable-media]
 
 parts:
     rsync:
