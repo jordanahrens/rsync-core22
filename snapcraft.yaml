@@ -1,5 +1,5 @@
 name: rsync-core22
-version: 3.2.6
+version: 3.2.7
 summary: Utility for transferring and syncing files between computers and drives
 description: |
   Rsync is a utility for efficiently transferring and synchronizing files
@@ -27,9 +27,9 @@ apps:
 parts:
     rsync:
         plugin: autotools
-        source: https://download.samba.org/pub/rsync/src/rsync-3.2.6.tar.gz
+        source: https://download.samba.org/pub/rsync/src/rsync-3.2.7.tar.gz
         source-type: tar
-        source-checksum: sha256/fb3365bab27837d41feaf42e967c57bd3a47bc8f10765a3671efd6a3835454d3
+        source-checksum: sha256/4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb
         build-packages:
           - gcc
           - g++
